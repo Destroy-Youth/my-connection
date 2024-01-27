@@ -10,5 +10,9 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     margin: 0;
   }
+
+  svg {
+    fill: gray;
+  }
 `
 export default GlobalStyle

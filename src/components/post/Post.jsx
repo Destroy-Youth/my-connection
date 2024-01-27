@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { ProfilePic } from '../profile-pic/ProfilePic'
 import { Content } from './content/Content'
+import { Actions } from './actions/Actions'
 
 const Container = styled.div`
   min-height: 6rem;
@@ -21,6 +22,7 @@ export const Post = ({ children: post }) => {
     <Container>
       <ProfilePic />
       <Content>{post.content}</Content>
+      <Actions />
     </Container>
   )
 }

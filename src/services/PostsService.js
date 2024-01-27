@@ -1,6 +1,9 @@
 const data = [
   {
     id: '1',
+    owner: {
+      id: 2,
+    },
     content: {
       text: 'Post 1',
       image: {
@@ -20,6 +23,9 @@ const data = [
   },
   {
     id: '2',
+    owner: {
+      id: 2,
+    },
     content: {
       text: 'Post 1',
     },
