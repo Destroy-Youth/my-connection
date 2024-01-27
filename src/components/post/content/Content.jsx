@@ -3,25 +3,27 @@ import styled from 'styled-components'
 
 const Image = styled.img`
   padding: 0.2rem;
+  width: 100%;
+  border-radius: 5px;
 `
 
 const ImageContainer = styled.div`
-  margin: 0.1rem;
+  margin: 0.5rem;
   border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `
 
 export const Content = ({ children: content }) => {
   return (
     <section>
       <div>{content.text}</div>
-
-      {/* {!content.images.length || (
+      {!content.image || (
         <ImageContainer>
-          {content.images.map(image => (
-            <Image src={image.url}></Image>
-          ))}
+          <Image src={content.image.url} />
         </ImageContainer>
-      )} */}
+      )}
     </section>
   )
 }
