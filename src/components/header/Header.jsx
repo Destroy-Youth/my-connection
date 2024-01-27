@@ -4,8 +4,8 @@ import styled from 'styled-components'
 const Bar = styled.div`
   background-color: gray;
   height: 5rem;
-  position: fixed;
   width: 100%;
+  position: static;
 `
 
 const Title = styled.h1``
