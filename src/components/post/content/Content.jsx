@@ -8,22 +8,25 @@ const Image = styled.img`
 `
 
 const ImageContainer = styled.div`
-  margin: 0.5rem;
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 `
 
+const Container = styled.section`
+  padding: 0.5rem;
+`
+
 export const Content = ({ children: content }) => {
   return (
-    <section>
-      <div>{content.text}</div>
+    <Container>
+      <p>{content.text}</p>
       {!content.image || (
         <ImageContainer>
           <Image src={content.image.url} />
         </ImageContainer>
       )}
-    </section>
+    </Container>
   )
 }

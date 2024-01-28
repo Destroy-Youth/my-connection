@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Post } from '../post/Post'
-import data from '../../services/PostsService'
+import data from '../../services/MockPostsService'
+import { NewPostForm } from '../post/NewPostForm/NewPostForm'
 
 const Container = styled.div`
   margin-top: 0.5rem;
@@ -14,6 +15,7 @@ const Container = styled.div`
 const Feed = () => {
   return (
     <Container>
+      <NewPostForm />
       {data.map(post => (
         <Post key={post.id}>{post}</Post>
       ))}

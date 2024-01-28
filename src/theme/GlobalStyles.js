@@ -14,5 +14,9 @@ const GlobalStyle = createGlobalStyle`
   svg {
     fill: gray;
   }
+
+  p {
+    margin: 0;
+  }
 `
 export default GlobalStyle

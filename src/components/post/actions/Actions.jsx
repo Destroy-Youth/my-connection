@@ -5,8 +5,7 @@ import { ReactComponent as Comment } from '../../../assets/svg/posts/actions/com
 
 const Bar = styled.div`
   border-top: 1px solid #908d96b0;
-  padding: 0.5rem;
-  margin-top: 1.5rem;
+  padding: 0.5rem 0;
   display: flex;
   flex-direction: row;
   align-items: stretch;
