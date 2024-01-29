@@ -15,7 +15,6 @@ const Container = styled.div`
   color: ${props => props.theme.fontColor};
 `
 
-const Text = styled.div``
 
 export const Post = ({ children: post }) => {
   return (
