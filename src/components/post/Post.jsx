@@ -16,11 +16,11 @@ const Container = styled.div`
 `
 
 
-export const Post = ({ children: post }) => {
+export const Post = ({ children: moviePost }) => {
   return (
     <Container>
       <ProfilePic />
-      <Content>{post.content}</Content>
+      <Content {...moviePost} />
       <Actions />
     </Container>
   )

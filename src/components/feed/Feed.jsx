@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Post } from '../post/Post'
 import data from '../../services/MockPostsService'
 import { NewPostForm } from '../post/NewPostForm/NewPostForm'
+import useGetMovies from '../../hooks/useGetMovies'
 
 const Container = styled.div`
   margin-top: 0.5rem;
@@ -13,12 +14,21 @@ const Container = styled.div`
 `
 
 const Feed = () => {
+  const { isLoading, error, data } = useGetMovies()
+
+  const [show, setShow] = useState(false)
+
+  console.log(data)
+
+  // if (!!error) return <p>Error!!</p>
+
+  // if (isLoading) return <p>Loading...</p>
+
   return (
     <Container>
       <NewPostForm />
-      {data.map(post => (
-        <Post key={post.id}>{post}</Post>
-      ))}
+      {!data ||
+        data.map(moviePost => <Post key={moviePost._id}>{moviePost}</Post>)}
     </Container>
   )
 }

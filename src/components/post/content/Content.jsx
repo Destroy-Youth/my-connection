@@ -18,13 +18,13 @@ const Container = styled.section`
   padding: 0.5rem;
 `
 
-export const Content = ({ children: content }) => {
+export const Content = ({ plot: text, poster: image }) => {
   return (
     <Container>
-      <p>{content.text}</p>
-      {!content.image || (
+      <p>{text}</p>
+      {!image || (
         <ImageContainer>
-          <Image src={content.image.url} />
+          <Image src={image.url} />
         </ImageContainer>
       )}
     </Container>
