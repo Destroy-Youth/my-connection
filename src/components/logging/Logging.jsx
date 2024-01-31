@@ -19,7 +19,6 @@ export const Logging = () => {
 
   const onsubmit = async data => {
     const fetchedUser = await loginUser(data.email, data.password)
-    console.log(fetchedUser)
     setUser(fetchedUser)
   }
 

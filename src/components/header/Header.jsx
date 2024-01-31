@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { userContext } from '../context/UserContext'
 
 const Bar = styled.div`
   background-color: gray;
@@ -10,10 +11,15 @@ const Bar = styled.div`
 
 const Title = styled.h1``
 
+const LogOutButton = styled.button``
+
 const Header = () => {
+  const { setUser } = useContext(userContext)
+
   return (
     <Bar>
       <Title>MyConnection</Title>
+      <LogOutButton onClick={() => setUser(null)}>Log out</LogOutButton>
     </Bar>
   )
 }

@@ -18,13 +18,32 @@ const Container = styled.section`
   padding: 0.5rem;
 `
 
-export const Content = ({ plot: text, poster: image }) => {
+const MovieTitle = styled.h1`
+  color: ${props => props.theme.postTitle};
+`
+
+const DirectorReference = styled.h2`
+  font-size: 1rem;
+`
+
+export const Content = ({ plot: text, poster: image, title, directors }) => {
+  const mapDirectors = directors => {
+    let directorsString = ''
+    directors.map((director, i) => {
+      directorsString += director
+      if (i != directors.length - 1) directorsString += ', '
+    })
+    return directorsString
+  }
+
   return (
     <Container>
+      <MovieTitle>{title}</MovieTitle>
+      <DirectorReference>by {mapDirectors(directors)}</DirectorReference>
       <p>{text}</p>
       {!image || (
         <ImageContainer>
-          <Image src={image.url} />
+          <Image src={image} />
         </ImageContainer>
       )}
     </Container>
