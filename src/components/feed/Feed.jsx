@@ -18,8 +18,6 @@ const Feed = () => {
 
   const [show, setShow] = useState(false)
 
-  console.log(data)
-
   // if (!!error) return <p>Error!!</p>
 
   // if (isLoading) return <p>Loading...</p>

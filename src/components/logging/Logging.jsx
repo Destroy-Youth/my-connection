@@ -1,10 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import useGetUser from '../../hooks/useGetUser'
-import { useState } from 'react'
-import { useSessionStorage } from '../../hooks/useUserSession'
-import { UserContextProvider, userContext } from '../context/UserContext'
 import { loginUser } from '../../services/userService'
+import { userContext } from '../context/UserContext'
 
 export const Logging = () => {
   const { register, handleSubmit, setValue } = useForm()
@@ -20,9 +17,10 @@ export const Logging = () => {
     )
   }, [])
 
-  const onsubmit = data => {
-    console.log(data)
-    const fetchedUser = loginUser(data)
+  const onsubmit = async data => {
+    const fetchedUser = await loginUser(data.email, data.password)
+    console.log(fetchedUser)
+    setUser(fetchedUser)
   }
 
   return (
