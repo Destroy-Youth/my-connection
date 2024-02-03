@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Post } from '../post/Post'
-import data from '../../services/MockPostsService'
-import { NewPostForm } from '../post/NewPostForm/NewPostForm'
 import useGetMovies from '../../hooks/useGetMovies'
+import { Post } from '../post/Post'
 
 const Container = styled.div`
   margin-top: 0.5rem;
@@ -24,7 +22,7 @@ const Feed = () => {
 
   return (
     <Container>
-      <NewPostForm />
+      {/* <NewPostForm /> */}
       {!data ||
         data.map(moviePost => <Post key={moviePost._id}>{moviePost}</Post>)}
     </Container>

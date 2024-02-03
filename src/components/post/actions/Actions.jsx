@@ -28,10 +28,10 @@ const ActionButton = styled.div`
   }
 `
 
-export const Actions = () => {
+export const Actions = ({ setShowComments, showComments }) => {
   return (
     <Bar>
-      <ActionButton>
+      <ActionButton onClick={() => setShowComments(!showComments)}>
         <Comment />
       </ActionButton>
       <ActionButton>
