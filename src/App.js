@@ -6,16 +6,25 @@ import Header from './components/header/Header'
 import { Logging } from './components/logging/Logging'
 import GlobalStyle from './theme/GlobalStyles'
 import theme from './theme/Theme'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import {
   UserContextProvider,
   userContext,
 } from './components/context/UserContext'
+import { generateToken, messaging } from './firebase'
+import { onMessage } from 'firebase/messaging'
 
 const queryClient = new QueryClient()
 
 function App() {
   const { user } = useContext(userContext)
+
+  useEffect(() => {
+    generateToken()
+    onMessage(messaging, payload => {
+      console.log(payload)
+    })
+  }, [])
 
   return (
     <div>
